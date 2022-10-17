@@ -6,7 +6,7 @@
     "serve": "cross-env VUE_APP_TARGET=testnet vue-cli-service serve",
     "serve:mainnet": "cross-env VUE_APP_TARGET=mainnet vue-cli-service serve",
     "build:testnet": "cross-env VUE_APP_TARGET=testnet vue-cli-service build",
-    "build": "cross-env VUE_APP_TARGET=mainnet vue-cli-service build",
+    "build": "cross-env VUE_APP_TARGET=testnet vue-cli-service build",
     "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
