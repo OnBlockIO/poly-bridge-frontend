@@ -146,7 +146,7 @@ export default {
       [WalletName.NeoLine]: 'NeoLine',
       [WalletName.NeoLineN3]: 'NeoLine',
       [WalletName.O3]: 'O3',
-      [WalletName.Binance]: 'Binance',
+      // [WalletName.Binance]: 'Binance',
       [WalletName.Cyano]: 'Cyano',
       [WalletName.WalletConnect]: 'WalletConnect',
       [WalletName.StarMask]: 'StarMask',
