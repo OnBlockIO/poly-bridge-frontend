@@ -18,39 +18,39 @@ export default {
     getNftTransaction: state => hash => state.nfttransactionMap[hash],
   },
   mutations: {
-    setTransactions (state, { params, value }) {
+    setTransactions(state, { params, value }) {
       Vue.set(state.transactionsMap, getStoreKey(params), value);
     },
-    setTransaction (state, { key, value }) {
+    setTransaction(state, { key, value }) {
       Vue.set(state.transactionMap, key, value);
     },
-    setNftTransactions (state, { params, value }) {
+    setNftTransactions(state, { params, value }) {
       Vue.set(state.nfttransactionsMap, getStoreKey(params), value);
     },
-    setNftTransaction (state, { key, value }) {
+    setNftTransaction(state, { key, value }) {
       Vue.set(state.nfttransactionMap, key, value);
     },
   },
   actions: {
-    async getTransactions ({ commit }, { addressHexs, page, pageSize, vary }) {
+    async getTransactions({ commit }, { addressHexs, page, pageSize, vary }) {
       const result = await httpApi.getTransactions({ addressHexs, page, pageSize });
       commit('setTransactions', {
         params: { addressHexs, page, pageSize, vary },
         value: result,
       });
     },
-    async getTransaction ({ commit }, hash) {
+    async getTransaction({ commit }, hash) {
       const result = await httpApi.getTransaction({ hash });
       commit('setTransaction', { key: hash, value: result });
     },
-    async getNftTransactions ({ commit }, { addressHexs, page, pageSize, vary }) {
+    async getNftTransactions({ commit }, { addressHexs, page, pageSize, vary }) {
       const result = await httpApi.getNftTransactions({ addressHexs, page, pageSize });
       commit('setNftTransactions', {
         params: { addressHexs, page, pageSize, vary },
         value: result,
       });
     },
-    async getNftTransaction ({ commit }, hash) {
+    async getNftTransaction({ commit }, hash) {
       const result = await httpApi.getNftTransaction({ hash });
       commit('setNftTransaction', { key: hash, value: result });
     },
