@@ -7,7 +7,7 @@ export const WalletName = {
   NeoLine: 'NeoLine',
   NeoLineN3: 'NeoLineN3',
   O3: 'O3',
-  Binance: 'Binance',
+  // Binance: 'Binance',
   Cyano: 'Cyano',
   WalletConnect: 'WalletConnnect',
   StarMask: 'StarMask',

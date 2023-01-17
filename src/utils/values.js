@@ -106,13 +106,13 @@ export const WALLETS = [
     icon: require('@/assets/svg/o3.svg'),
     downloadUrl: 'https://o3.network/#download',
   },
-  {
+  /*{
     name: WalletName.Binance,
     supportedChainIds: [ChainId.Bsc],
     icon: require('@/assets/svg/binance.svg'),
     downloadUrl:
       'https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp',
-  },
+  },*/
   {
     name: WalletName.Cyano,
     supportedChainIds: [ChainId.Ont],
