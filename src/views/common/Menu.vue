@@ -1,7 +1,6 @@
 <template>
   <div class="menu">
     <CLink class="item" @click="goGovernance" target="_self"> Governance </CLink>
-    <CLink class="item" @click="goVesting" target="_blank"> Vesting </CLink>
     <CLink class="item" style="margin-right: 10px" @click="goGM" target="_blank">
       GhostMarket
     </CLink>
