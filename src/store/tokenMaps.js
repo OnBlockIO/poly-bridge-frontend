@@ -7,8 +7,10 @@ export default {
     tokenMapsMap: {},
   },
   getters: {
-    getTokenMaps: state => ({ fromChainId, fromTokenHash }) =>
-      state.tokenMapsMap[getStoreKey({ fromChainId, fromTokenHash })],
+    getTokenMaps:
+      (state) =>
+      ({ fromChainId, fromTokenHash }) =>
+        state.tokenMapsMap[getStoreKey({ fromChainId, fromTokenHash })],
   },
   mutations: {
     setTokenMaps(state, { params, value }) {

@@ -62,13 +62,13 @@ export default {
   },
   computed: {
     filteredTokenBasics() {
-      return this.tokenBasics.filter(tokenBasic => {
+      return this.tokenBasics.filter((tokenBasic) => {
         return tokenBasic.name.toLowerCase().includes(this.keyword.toLowerCase());
       });
     },
     topTokenBasics() {
-      return TOP_TOKEN_BASIC_NAMES.map(name => this.$store.getters.getTokenBasic(name)).filter(
-        item => item,
+      return TOP_TOKEN_BASIC_NAMES.map((name) => this.$store.getters.getTokenBasic(name)).filter(
+        (item) => item,
       );
     },
   },

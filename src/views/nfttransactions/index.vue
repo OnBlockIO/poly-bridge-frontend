@@ -140,8 +140,8 @@ export default {
   computed: {
     addressHexs() {
       return this.$store.getters.wallets
-        .filter(wallet => wallet.addressHex)
-        .map(wallet => wallet.addressHex);
+        .filter((wallet) => wallet.addressHex)
+        .map((wallet) => wallet.addressHex);
     },
     getTransactionsParams() {
       return {

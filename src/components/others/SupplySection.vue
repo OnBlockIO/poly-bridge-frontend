@@ -147,11 +147,11 @@ export default {
     const baseUrl = isMainnet
       ? 'https://api.ghostmarket.io/api/v2'
       : 'https://api-testnet.ghostmarket.io/api/v2';
-    new GMSupplyApi({ baseUrl }).getGMSupply().then(res => {
+    new GMSupplyApi({ baseUrl }).getGMSupply().then((res) => {
       const circulating = res.allCirculatingSupply === 0 ? 1 : res.allCirculatingSupply;
       this.totalSupplyCount = number(res.allTotalSupply, 0);
       this.availableSupplyCount = number(res.allCirculatingSupply, 0);
-      this.supplyTokens.forEach(token => {
+      this.supplyTokens.forEach((token) => {
         try {
           const tc = res[`${token.slug}CirculatingSupply`];
           token.availableAmount = number(tc, 0);

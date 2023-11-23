@@ -10,12 +10,16 @@ export default {
     nfttransactionMap: {},
   },
   getters: {
-    getTransactions: state => ({ addressAndChainIds, page, pageSize, vary }) =>
-      state.transactionsMap[getStoreKey({ addressAndChainIds, page, pageSize, vary })],
-    getTransaction: state => hash => state.transactionMap[hash],
-    getNftTransactions: state => ({ addressAndChainIds, page, pageSize, vary }) =>
-      state.nfttransactionsMap[getStoreKey({ addressAndChainIds, page, pageSize, vary })],
-    getNftTransaction: state => hash => state.nfttransactionMap[hash],
+    getTransactions:
+      (state) =>
+      ({ addressAndChainIds, page, pageSize, vary }) =>
+        state.transactionsMap[getStoreKey({ addressAndChainIds, page, pageSize, vary })],
+    getTransaction: (state) => (hash) => state.transactionMap[hash],
+    getNftTransactions:
+      (state) =>
+      ({ addressAndChainIds, page, pageSize, vary }) =>
+        state.nfttransactionsMap[getStoreKey({ addressAndChainIds, page, pageSize, vary })],
+    getNftTransaction: (state) => (hash) => state.nfttransactionMap[hash],
   },
   mutations: {
     setTransactions(state, { params, value }) {

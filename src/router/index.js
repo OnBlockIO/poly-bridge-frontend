@@ -39,7 +39,7 @@ const routes = [
 const router = new VueRouter({
   base: process.env.VUE_APP_PUBLIC_PATH,
   mode: 'history',
-  routes: routes.filter(route => route),
+  routes: routes.filter((route) => route),
 });
 
 router.beforeEach((to, from, next) => {

@@ -17,10 +17,10 @@ const nftRequest = axios.create({
 });
 
 request.interceptors.response.use(
-  response => {
+  (response) => {
     return response.data;
   },
-  async error => {
+  async (error) => {
     const { response } = error;
     let newError = error;
     if (response) {
@@ -45,7 +45,7 @@ export default {
   async getTokenBasics() {
     const result = await request({ method: 'post', url: '/tokenbasics', data: {} });
     const tokenBasics = deserialize(list(schemas.tokenBasic), result.TokenBasics || []);
-    const tokens = _.flatMap(tokenBasics, tokenBasic => tokenBasic.tokens || []);
+    const tokens = _.flatMap(tokenBasics, (tokenBasic) => tokenBasic.tokens || []);
     return { tokenBasics, tokens };
   },
   async getTokenMaps({ fromChainId, fromTokenHash }) {

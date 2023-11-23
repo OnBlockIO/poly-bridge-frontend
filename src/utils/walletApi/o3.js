@@ -64,7 +64,7 @@ async function init() {
     try {
       store.dispatch('updateWallet', { name: WalletName.O3, installed: true });
 
-      neoDapi.addEventListener(neoDapi.Constants.EventName.ACCOUNT_CHANGED, async data => {
+      neoDapi.addEventListener(neoDapi.Constants.EventName.ACCOUNT_CHANGED, async (data) => {
         const address = data.address || null;
         const addressHex = await tryToConvertAddressToHex(WalletName.O3, address);
         store.dispatch('updateWallet', {
@@ -114,7 +114,7 @@ async function getBalance({ chainId, address, tokenHash }) {
       ],
     });
     const balance = (
-      (result[address] || []).find(item => toStandardHex(item.assetID) === token.hash) || {}
+      (result[address] || []).find((item) => toStandardHex(item.assetID) === token.hash) || {}
     ).amount;
     return balance == null ? '0' : balance;
   } catch (error) {

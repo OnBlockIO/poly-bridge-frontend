@@ -7,8 +7,10 @@ export default {
     balanceMap: {},
   },
   getters: {
-    getBalance: state => ({ chainId, address, tokenHash }) =>
-      state.balanceMap[getStoreKey({ chainId, address, tokenHash })],
+    getBalance:
+      (state) =>
+      ({ chainId, address, tokenHash }) =>
+        state.balanceMap[getStoreKey({ chainId, address, tokenHash })],
   },
   mutations: {
     setBalance(state, { params, value }) {

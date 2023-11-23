@@ -9,19 +9,19 @@ export default {
     nftFee: {},
   },
   getters: {
-    getAssetsBasics: state => {
+    getAssetsBasics: (state) => {
       return state.assetsBasicMap;
     },
-    getItemsShow: state => {
+    getItemsShow: (state) => {
       return state.itemsShow;
     },
-    getItems: state => {
+    getItems: (state) => {
       return state.items;
     },
-    getAssetMap: state => {
+    getAssetMap: (state) => {
       return state.assetMap;
     },
-    getNftFee: state => {
+    getNftFee: (state) => {
       return state.nftFee;
     },
   },

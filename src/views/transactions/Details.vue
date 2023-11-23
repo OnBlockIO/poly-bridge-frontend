@@ -65,14 +65,14 @@
               class="speedup"
               v-if="
                 index == 2 &&
-                  getStepStatus(2) === 'pending' &&
-                  $route.name === 'home' &&
-                  step.chainId !== 3 &&
-                  step.chainId !== 4 &&
-                  step.chainId !== 5 &&
-                  step.chainId !== 14 &&
-                  step.chainId !== 88 &&
-                  step.chainId !== 318
+                getStepStatus(2) === 'pending' &&
+                $route.name === 'home' &&
+                step.chainId !== 3 &&
+                step.chainId !== 4 &&
+                step.chainId !== 5 &&
+                step.chainId !== 14 &&
+                step.chainId !== 88 &&
+                step.chainId !== 318
               "
             >
               {{ $t('home.form.speedup') }}
@@ -88,15 +88,15 @@
               class="speedup"
               v-if="
                 index == 2 &&
-                  getStepStatus(2) === 'pending' &&
-                  $route.name === 'transactions' &&
-                  speedUpMSGFlag &&
-                  step.chainId !== 3 &&
-                  step.chainId !== 4 &&
-                  step.chainId !== 5 &&
-                  step.chainId !== 14 &&
-                  step.chainId !== 88 &&
-                  step.chainId !== 318
+                getStepStatus(2) === 'pending' &&
+                $route.name === 'transactions' &&
+                speedUpMSGFlag &&
+                step.chainId !== 3 &&
+                step.chainId !== 4 &&
+                step.chainId !== 5 &&
+                step.chainId !== 14 &&
+                step.chainId !== 88 &&
+                step.chainId !== 318
               "
             >
               {{ $t('home.form.speedUpMSG') }}
@@ -105,14 +105,14 @@
               :loading="selfPayLoading"
               v-if="
                 index == 2 &&
-                  getStepStatus(2) === 'pending' &&
-                  $route.name === 'transactions' &&
-                  step.chainId !== 3 &&
-                  step.chainId !== 4 &&
-                  step.chainId !== 5 &&
-                  step.chainId !== 14 &&
-                  step.chainId !== 88 &&
-                  step.chainId !== 318
+                getStepStatus(2) === 'pending' &&
+                $route.name === 'transactions' &&
+                step.chainId !== 3 &&
+                step.chainId !== 4 &&
+                step.chainId !== 5 &&
+                step.chainId !== 14 &&
+                step.chainId !== 88 &&
+                step.chainId !== 318
               "
               @click="payTochainFee"
               class="button-submit"

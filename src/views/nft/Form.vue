@@ -128,8 +128,8 @@
         <div
           v-if="
             fee &&
-              fee.Balance < 500 &&
-              fee.SwapTokenHash === 'deaddeaddeaddeaddeaddeaddeaddeaddead0000'
+            fee.Balance < 500 &&
+            fee.SwapTokenHash === 'deaddeaddeaddeaddeaddeaddeaddeaddead0000'
           "
           class="fee"
         >
@@ -140,8 +140,8 @@
         <div
           v-if="
             fee &&
-              fee.Balance < 500 &&
-              fee.SwapTokenHash === 'e552fb52a4f19e44ef5a967632dbc320b0820639'
+            fee.Balance < 500 &&
+            fee.SwapTokenHash === 'e552fb52a4f19e44ef5a967632dbc320b0820639'
           "
           class="fee"
         >
@@ -344,11 +344,12 @@ export default {
       return this.$store.getters.getItems;
     },
     chains() {
-      return this.$store.getters.chains.filter(chain => chain.id !== ChainId.Poly);
+      return this.$store.getters.chains.filter((chain) => chain.id !== ChainId.Poly);
     },
     nftChains() {
       return this.$store.getters.chains.filter(
-        chain => chain.id !== ChainId.Poly && chain.id !== ChainId.Ont && chain.id !== ChainId.Neo,
+        (chain) =>
+          chain.id !== ChainId.Poly && chain.id !== ChainId.Ont && chain.id !== ChainId.Neo,
       );
     },
     fromChains() {
@@ -356,8 +357,8 @@ export default {
         this.tokenBasic &&
         this.$store.getters
           .getTokensByTokenBasicName(this.tokenBasic.name)
-          .map(token => this.$store.getters.getChain(token.chainId))
-          .filter(chain => chain)
+          .map((token) => this.$store.getters.getChain(token.chainId))
+          .filter((chain) => chain)
       );
     },
     fromChain() {
@@ -394,8 +395,8 @@ export default {
       return (
         this.assetMap &&
         this.assetMap
-          .map(asset => this.$store.getters.getChain(asset.ChainId))
-          .filter(chain => chain)
+          .map((asset) => this.$store.getters.getChain(asset.ChainId))
+          .filter((chain) => chain)
       );
     },
     toChain() {

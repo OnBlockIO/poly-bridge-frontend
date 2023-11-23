@@ -3,7 +3,7 @@ export default {
     darkMode: false,
   },
   getters: {
-    getDarkMode: state => state.darkMode,
+    getDarkMode: (state) => state.darkMode,
   },
   mutations: {
     // set darkMode value

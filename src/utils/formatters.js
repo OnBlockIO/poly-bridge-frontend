@@ -53,10 +53,7 @@ export function formatPercentage(value, { decimals = null, displaySign = false }
   };
   let ret = null;
   if (decimals != null) {
-    ret = bn
-      .shiftedBy(2)
-      .dp(decimals)
-      .toFormat(options);
+    ret = bn.shiftedBy(2).dp(decimals).toFormat(options);
   } else {
     ret = bn.shiftedBy(2).toFormat(options);
   }

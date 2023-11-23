@@ -11,10 +11,10 @@ export default {
     ),
   },
   getters: {
-    wallets: state => Object.values(state.walletMap),
-    getWallet: state => name => state.walletMap[name],
-    getWalletsByChainId: (state, getters) => chainId =>
-      getters.wallets.filter(wallet => wallet.supportedChainIds.includes(chainId)),
+    wallets: (state) => Object.values(state.walletMap),
+    getWallet: (state) => (name) => state.walletMap[name],
+    getWalletsByChainId: (state, getters) => (chainId) =>
+      getters.wallets.filter((wallet) => wallet.supportedChainIds.includes(chainId)),
   },
   mutations: {
     setWallet(state, wallet) {

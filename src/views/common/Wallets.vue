@@ -51,11 +51,11 @@ export default {
       return this.$store.getters.wallets;
     },
     connectedWallets() {
-      return this.wallets.filter(wallet => wallet.connected);
+      return this.wallets.filter((wallet) => wallet.connected);
     },
   },
   created() {
-    this.wallets.forEach(async wallet => {
+    this.wallets.forEach(async (wallet) => {
       Vue.use(await getWalletApi(wallet.name));
     });
     this.$store.dispatch('loadChainSelectedWallets');

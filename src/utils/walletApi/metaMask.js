@@ -85,7 +85,7 @@ async function init() {
       await queryState();
     }
 
-    window.ethereum.on('accountsChanged', async accounts => {
+    window.ethereum.on('accountsChanged', async (accounts) => {
       const address = accounts[0] || null;
       const addressHex = await tryToConvertAddressToHex(WalletName.MetaMask, address);
       const checksumAddress = address && web3.utils.toChecksumAddress(address);
@@ -97,7 +97,7 @@ async function init() {
       });
     });
 
-    window.ethereum.on('chainChanged', network => {
+    window.ethereum.on('chainChanged', (network) => {
       store.dispatch('updateWallet', {
         name: WalletName.MetaMask,
         chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],

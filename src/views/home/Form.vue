@@ -149,8 +149,8 @@
           <div
             v-if="
               fee &&
-                fee.Balance < 500 &&
-                fee.SwapTokenHash === 'deaddeaddeaddeaddeaddeaddeaddeaddead0000'
+              fee.Balance < 500 &&
+              fee.SwapTokenHash === 'deaddeaddeaddeaddeaddeaddeaddeaddead0000'
             "
             class="fee"
           >
@@ -161,8 +161,8 @@
           <div
             v-if="
               fee &&
-                fee.Balance < 500 &&
-                fee.SwapTokenHash === 'e552fb52a4f19e44ef5a967632dbc320b0820639'
+              fee.Balance < 500 &&
+              fee.SwapTokenHash === 'e552fb52a4f19e44ef5a967632dbc320b0820639'
             "
             class="fee"
           >
@@ -423,15 +423,15 @@ export default {
       return this.$store.getters.getTokenBasic(this.tokenBasicName);
     },
     chains() {
-      return this.$store.getters.chains.filter(chain => chain.id !== ChainId.Poly);
+      return this.$store.getters.chains.filter((chain) => chain.id !== ChainId.Poly);
     },
     fromChains() {
       return (
         this.tokenBasic &&
         this.$store.getters
           .getTokensByTokenBasicName(this.tokenBasic.name)
-          .map(token => this.$store.getters.getChain(token.chainId))
-          .filter(chain => chain)
+          .map((token) => this.$store.getters.getChain(token.chainId))
+          .filter((chain) => chain)
       );
     },
     fromChain() {
@@ -465,8 +465,8 @@ export default {
       return (
         this.tokenMaps &&
         this.tokenMaps
-          .map(tokenMap => this.$store.getters.getChain(tokenMap.toToken.chainId))
-          .filter(chain => chain)
+          .map((tokenMap) => this.$store.getters.getChain(tokenMap.toToken.chainId))
+          .filter((chain) => chain)
       );
     },
     toChain() {
@@ -713,7 +713,7 @@ export default {
       });
       const { fromChainId } = this;
       this.fromChainId = this.toChainId;
-      if (this.toChains && this.toChains.find(chain => chain.id === fromChainId)) {
+      if (this.toChains && this.toChains.find((chain) => chain.id === fromChainId)) {
         this.toChainId = fromChainId;
       } else {
         this.toChainId = null;
