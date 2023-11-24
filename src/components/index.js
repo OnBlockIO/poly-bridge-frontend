@@ -1,7 +1,7 @@
 export default {
   install(Vue) {
     const requireComponent = require.context('.', true, /^(?!.*\/_).*\.vue$/);
-    requireComponent.keys().forEach(fileName => {
+    requireComponent.keys().forEach((fileName) => {
       const componentName = fileName
         .split('/')
         .pop()

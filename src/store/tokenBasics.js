@@ -7,9 +7,9 @@ export default {
   },
   getters: {
     tokenBasics: (state, getters) => {
-      return Object.keys(state.tokenBasicMap).map(key => getters.getTokenBasic(key));
+      return Object.keys(state.tokenBasicMap).map((key) => getters.getTokenBasic(key));
     },
-    getTokenBasic: state => name => {
+    getTokenBasic: (state) => (name) => {
       const tokenBasic = state.tokenBasicMap[name];
       if (!tokenBasic) {
         return null;
@@ -21,10 +21,12 @@ export default {
         //  icon: TOKEN_BASIC_ICONS[name] ? TOKEN_BASIC_ICONS[name] : UNKNOWN_ICON,
       };
     },
-    getTokenBasicByChainIdAndTokenHash: (state, getters) => ({ chainId, tokenHash }) => {
-      const token = getters.getToken({ chainId, hash: tokenHash });
-      return token && getters.getTokenBasic(token.tokenBasicName);
-    },
+    getTokenBasicByChainIdAndTokenHash:
+      (state, getters) =>
+      ({ chainId, tokenHash }) => {
+        const token = getters.getToken({ chainId, hash: tokenHash });
+        return token && getters.getTokenBasic(token.tokenBasicName);
+      },
   },
   mutations: {
     setTokenBasics(state, tokenBasics) {

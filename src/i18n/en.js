@@ -26,7 +26,7 @@ export default {
       connectWallet: 'Connect {walletName}',
     },
     footer: {
-      copyright: 'GhostMarket, a product of ONBLOCKIO, LDA © 2021. | All Right Reserved.',
+      copyright: 'GhostMarket, a product of ONBLOCKIO, LDA © 2024. | All Right Reserved.',
     },
   },
   home: {

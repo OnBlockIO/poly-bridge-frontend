@@ -65,8 +65,8 @@ async function queryState() {
     chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],
   });
 }
-const sleep = time =>
-  new Promise(res => {
+const sleep = (time) =>
+  new Promise((res) => {
     setTimeout(() => {
       res(null);
     }, time);
@@ -80,7 +80,7 @@ async function init() {
     if (sessionStorage.getItem(MATH_CONNECTED_KEY) === 'true') {
       await queryState();
     }
-    web3.currentProvider.on('accountsChanged', async accounts => {
+    web3.currentProvider.on('accountsChanged', async (accounts) => {
       if (sessionStorage.getItem(MATH_CONNECTED_KEY) !== 'true') {
         return;
       }
@@ -95,7 +95,7 @@ async function init() {
       });
     });
 
-    web3.currentProvider.on('chainChanged', network => {
+    web3.currentProvider.on('chainChanged', (network) => {
       store.dispatch('updateWallet', {
         name: WalletName.Math,
         chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],

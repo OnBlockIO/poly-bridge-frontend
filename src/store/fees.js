@@ -8,9 +8,14 @@ export default {
     manualTxDataMap: {},
   },
   getters: {
-    getFee: state => ({ fromChainId, fromTokenHash, toTokenHash, toChainId }) =>
-      state.feeMap[getStoreKey({ fromChainId, fromTokenHash, toTokenHash, toChainId })],
-    getManualTxData: state => ({ polyHash }) => state.manualTxDataMap[getStoreKey({ polyHash })],
+    getFee:
+      (state) =>
+      ({ fromChainId, fromTokenHash, toTokenHash, toChainId }) =>
+        state.feeMap[getStoreKey({ fromChainId, fromTokenHash, toTokenHash, toChainId })],
+    getManualTxData:
+      (state) =>
+      ({ polyHash }) =>
+        state.manualTxDataMap[getStoreKey({ polyHash })],
   },
   mutations: {
     setFee(state, { params, value }) {

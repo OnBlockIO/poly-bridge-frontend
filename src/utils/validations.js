@@ -68,6 +68,6 @@ export default {
     Vue.component('ValidationObserver', ValidationObserver);
     Vue.component('ValidationProvider', ValidationProvider);
 
-    i18n.vm.$watch('locale', value => localize(value));
+    i18n.vm.$watch('locale', (value) => localize(value));
   },
 };

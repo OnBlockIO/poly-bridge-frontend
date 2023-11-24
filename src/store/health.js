@@ -7,7 +7,10 @@ export default {
     healthDataMap: {},
   },
   getters: {
-    getHealthData: state => ({ chindIds }) => state.healthDataMap[getStoreKey({ chindIds })],
+    getHealthData:
+      (state) =>
+      ({ chindIds }) =>
+        state.healthDataMap[getStoreKey({ chindIds })],
   },
   mutations: {
     setHealthData(state, { params, value }) {

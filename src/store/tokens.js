@@ -6,16 +6,21 @@ export default {
     tokenMap: {},
   },
   getters: {
-    tokens: state => Object.values(state.tokenMap),
-    getToken: state => ({ chainId, hash }) => state.tokenMap[getStoreKey({ chainId, hash })],
-    getTokensByTokenBasicName: (state, getters) => tokenBasicName => {
-      return getters.tokens.filter(token => token.tokenBasicName === tokenBasicName);
+    tokens: (state) => Object.values(state.tokenMap),
+    getToken:
+      (state) =>
+      ({ chainId, hash }) =>
+        state.tokenMap[getStoreKey({ chainId, hash })],
+    getTokensByTokenBasicName: (state, getters) => (tokenBasicName) => {
+      return getters.tokens.filter((token) => token.tokenBasicName === tokenBasicName);
     },
-    getTokenByTokenBasicNameAndChainId: (state, getters) => ({ tokenBasicName, chainId }) => {
-      return getters
-        .getTokensByTokenBasicName(tokenBasicName)
-        .find(token => token.chainId === chainId);
-    },
+    getTokenByTokenBasicNameAndChainId:
+      (state, getters) =>
+      ({ tokenBasicName, chainId }) => {
+        return getters
+          .getTokensByTokenBasicName(tokenBasicName)
+          .find((token) => token.chainId === chainId);
+      },
   },
   mutations: {
     setTokens(state, tokens) {

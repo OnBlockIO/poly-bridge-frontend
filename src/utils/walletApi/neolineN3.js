@@ -79,7 +79,7 @@ async function init() {
         await queryState();
       }
 
-      neoDapi.addEventListener(neoDapi.EVENT.ACCOUNT_CHANGED, async data => {
+      neoDapi.addEventListener(neoDapi.EVENT.ACCOUNT_CHANGED, async (data) => {
         const address = data.address || null;
         const addressHex = await tryToConvertAddressToHex(WalletName.NeoLineN3, address);
         store.dispatch('updateWallet', {
@@ -125,7 +125,7 @@ async function getBalance({ chainId, address, tokenHash }) {
     const result = await n3Dapi.getBalance();
     console.log(result);
     const balance = (
-      (result[address] || []).find(item => toStandardHex(item.contract) === token.hash) || {}
+      (result[address] || []).find((item) => toStandardHex(item.contract) === token.hash) || {}
     ).amount;
     return balance == null ? '0' : balance;
   } catch (error) {

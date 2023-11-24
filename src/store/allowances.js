@@ -7,8 +7,10 @@ export default {
     allowanceMap: {},
   },
   getters: {
-    getAllowance: state => ({ chainId, address, tokenHash, spender }) =>
-      state.allowanceMap[getStoreKey({ chainId, address, tokenHash, spender })],
+    getAllowance:
+      (state) =>
+      ({ chainId, address, tokenHash, spender }) =>
+        state.allowanceMap[getStoreKey({ chainId, address, tokenHash, spender })],
   },
   mutations: {
     setAllowance(state, { params, value }) {

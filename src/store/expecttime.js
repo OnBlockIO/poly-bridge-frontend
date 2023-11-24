@@ -7,8 +7,10 @@ export default {
     expectTimeMap: {},
   },
   getters: {
-    getExpectTime: state => ({ fromChainId, toChainId }) =>
-      state.expectTimeMap[getStoreKey({ fromChainId, toChainId })],
+    getExpectTime:
+      (state) =>
+      ({ fromChainId, toChainId }) =>
+        state.expectTimeMap[getStoreKey({ fromChainId, toChainId })],
   },
   mutations: {
     setExpectTime(state, { params, value }) {

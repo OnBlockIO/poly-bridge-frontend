@@ -73,10 +73,7 @@ export function decimalToInteger(decimal, unit) {
   if (new BigNumber(decimal).isNaN()) {
     return null;
   }
-  return new BigNumber(decimal)
-    .shiftedBy(unit)
-    .dp(0)
-    .toFixed();
+  return new BigNumber(decimal).shiftedBy(unit).dp(0).toFixed();
 }
 
 export function objectToBase64(object) {

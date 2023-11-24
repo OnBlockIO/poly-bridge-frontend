@@ -27,16 +27,16 @@ export default {
   },
   getters: {
     chains: (state, getters) => {
-      return Object.keys(state.chainMap).map(key => getters.getChain(key));
+      return Object.keys(state.chainMap).map((key) => getters.getChain(key));
     },
-    getChain: state => id => {
+    getChain: (state) => (id) => {
       const chain = state.chainMap[id];
       if (!chain) {
         return null;
       }
       return { ...chain, selectedWalletName: state.chainSelectedWalletMap[id] };
     },
-    getChainConnectedWallet: (state, getters) => id => {
+    getChainConnectedWallet: (state, getters) => (id) => {
       const wallet = getters.getWallet(state.chainSelectedWalletMap[id]);
       return wallet && wallet.connected ? wallet : null;
     },

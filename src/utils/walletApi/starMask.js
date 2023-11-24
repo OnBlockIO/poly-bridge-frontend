@@ -77,7 +77,7 @@ async function init() {
       await queryState();
     }
 
-    window.starcoin.on('accountsChanged', async accounts => {
+    window.starcoin.on('accountsChanged', async (accounts) => {
       const address = accounts[0] || null;
       const addressHex = await tryToConvertAddressToHex(WalletName.StarMask, address);
       const checksumAddress = address && toChecksumAddress(address);
@@ -89,7 +89,7 @@ async function init() {
       });
     });
 
-    window.starcoin.on('chainChanged', network => {
+    window.starcoin.on('chainChanged', (network) => {
       store.dispatch('updateWallet', {
         name: WalletName.StarMask,
         chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],
@@ -198,37 +198,37 @@ async function lock({
     const functionId = '0xe52552637c5897a2d499fbf08216f73e::CrossChainScript::lock_with_stc_fee';
     const tyArgs = [];
 
-    const fromTokenHashHex = (function() {
+    const fromTokenHashHex = (function () {
       const se = new bcs.BcsSerializer();
       se.serializeStr(fromTokenHash);
       return hexlify(se.getBytes());
     })();
 
-    const toChainIdHex = (function() {
+    const toChainIdHex = (function () {
       const se = new bcs.BcsSerializer();
       se.serializeU64(toChainId);
       return hexlify(se.getBytes());
     })();
 
-    const toAddressHex = (function() {
+    const toAddressHex = (function () {
       const se = new bcs.BcsSerializer();
       se.serializeBytes(arrayify(toAddress));
       return hexlify(se.getBytes());
     })();
 
-    const amountHex = (function() {
+    const amountHex = (function () {
       const se = new bcs.BcsSerializer();
       se.serializeU128(amountInt);
       return hexlify(se.getBytes());
     })();
 
-    const feeHex = (function() {
+    const feeHex = (function () {
       const se = new bcs.BcsSerializer();
       se.serializeU128(feeInt);
       return hexlify(se.getBytes());
     })();
 
-    const idHex = (function() {
+    const idHex = (function () {
       const se = new bcs.BcsSerializer();
       se.serializeU128(id);
       return hexlify(se.getBytes());
@@ -243,7 +243,7 @@ async function lock({
     ];
     const scriptFunction = utils.tx.encodeScriptFunction(functionId, tyArgs, args);
 
-    const payloadInHex = (function() {
+    const payloadInHex = (function () {
       const se = new bcs.BcsSerializer();
       scriptFunction.serialize(se);
       return hexlify(se.getBytes());

@@ -72,7 +72,7 @@ async function setupProvider() {
     }
   }
 
-  const handleAccountsChanged = async accounts => {
+  const handleAccountsChanged = async (accounts) => {
     const address = accounts[0] || null;
     const addressHex = await tryToConvertAddressToHex(WalletName.WalletConnect, address);
     const checksumAddress = address && web3.utils.toChecksumAddress(address);
@@ -84,7 +84,7 @@ async function setupProvider() {
     });
   };
 
-  const handleChainChanged = network => {
+  const handleChainChanged = (network) => {
     store.dispatch('updateWallet', {
       name: WalletName.WalletConnect,
       chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],

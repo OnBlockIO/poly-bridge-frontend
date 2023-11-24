@@ -67,7 +67,7 @@ async function init() {
       await queryState();
     }
 
-    window.BinanceChain.on('accountsChanged', async accounts => {
+    window.BinanceChain.on('accountsChanged', async (accounts) => {
       const address = accounts[0] || null;
       const addressHex = await tryToConvertAddressToHex(WalletName.Binance, address);
       const checksumAddress = address && web3.utils.toChecksumAddress(address);
@@ -79,7 +79,7 @@ async function init() {
       });
     });
 
-    window.BinanceChain.on('chainChanged', network => {
+    window.BinanceChain.on('chainChanged', (network) => {
       store.dispatch('updateWallet', {
         name: WalletName.Binance,
         chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],

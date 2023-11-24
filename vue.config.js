@@ -1,11 +1,12 @@
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
+const webpack = require('webpack');
 
 const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
   devServer: { https: false },
   publicPath: process.env.VUE_APP_PUBLIC_PATH,
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.devtool(!IN_PRODUCTION ? 'source-map' : false);
 
     /* if (IN_PRODUCTION) {
@@ -22,6 +23,49 @@ module.exports = {
         },
       ]);
     } */
+  },
+  configureWebpack: (config) => {
+    config.resolve.fallback = {
+      crypto: require.resolve('crypto-browserify'),
+      stream: require.resolve('stream-browserify'),
+      os: require.resolve('os-browserify/browser'),
+      http: require.resolve('stream-http'),
+      https: require.resolve('https-browserify'),
+    };
+
+    const bufferPlugin = new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] });
+    const processPlugin = new webpack.ProvidePlugin({ process: 'process/browser' });
+    const osPlugin = new webpack.ProvidePlugin({ os: 'os-browserify/browser' });
+
+    const streamPlugin = new webpack.ProvidePlugin({ stream: 'stream-browserify' });
+
+    const streamTransform = new webpack.ProvidePlugin({
+      _stream_transform: 'readable-stream/transform',
+    });
+    const streamDuplex = new webpack.ProvidePlugin({ _stream_duplex: 'readable-stream/duplex' });
+    const streamPassthrough = new webpack.ProvidePlugin({
+      _stream_passthrough: 'readable-stream/passthrough',
+    });
+    const streamReadable = new webpack.ProvidePlugin({
+      _stream_readable: 'readable-stream/readable',
+    });
+    const streamWritable = new webpack.ProvidePlugin({
+      _stream_writable: 'readable-stream/writable',
+    });
+
+    config.plugins.push(
+      ...[
+        bufferPlugin,
+        processPlugin,
+        osPlugin,
+        streamPlugin,
+        streamTransform,
+        streamDuplex,
+        streamPassthrough,
+        streamReadable,
+        streamWritable,
+      ],
+    );
   },
   pluginOptions: {
     i18n: {

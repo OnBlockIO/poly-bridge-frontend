@@ -15,7 +15,7 @@ export default {
     listeners() {
       return {
         ...this.$listeners,
-        click: event => {
+        click: (event) => {
           if (this.$attrs.disabled) {
             event.preventDefault();
           } else {

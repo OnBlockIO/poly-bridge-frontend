@@ -103,7 +103,7 @@ async function init() {
       await queryState();
     }
 
-    ethereum.on('accountsChanged', async accounts => {
+    ethereum.on('accountsChanged', async (accounts) => {
       const address = accounts[0] || null;
       const addressHex = await tryToConvertAddressToHex(WalletName.CoinBase, address);
       const checksumAddress = address && web3.utils.toChecksumAddress(address);
@@ -115,7 +115,7 @@ async function init() {
       });
     });
 
-    ethereum.on('chainChanged', network => {
+    ethereum.on('chainChanged', (network) => {
       store.dispatch('updateWallet', {
         name: WalletName.CoinBase,
         chainId: NETWORK_CHAIN_ID_MAPS[Number(network)],

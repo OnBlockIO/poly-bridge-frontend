@@ -149,8 +149,8 @@
           <div
             v-if="
               fee &&
-                fee.Balance < 500 &&
-                fee.SwapTokenHash === 'deaddeaddeaddeaddeaddeaddeaddeaddead0000'
+              fee.Balance < 500 &&
+              fee.SwapTokenHash === 'deaddeaddeaddeaddeaddeaddeaddeaddead0000'
             "
             class="fee"
           >
@@ -161,8 +161,8 @@
           <div
             v-if="
               fee &&
-                fee.Balance < 500 &&
-                fee.SwapTokenHash === 'e552fb52a4f19e44ef5a967632dbc320b0820639'
+              fee.Balance < 500 &&
+              fee.SwapTokenHash === 'e552fb52a4f19e44ef5a967632dbc320b0820639'
             "
             class="fee"
           >
@@ -423,15 +423,15 @@ export default {
       return this.$store.getters.getTokenBasic(this.tokenBasicName);
     },
     chains() {
-      return this.$store.getters.chains.filter(chain => chain.id !== ChainId.Poly);
+      return this.$store.getters.chains.filter((chain) => chain.id !== ChainId.Poly);
     },
     fromChains() {
       return (
         this.tokenBasic &&
         this.$store.getters
           .getTokensByTokenBasicName(this.tokenBasic.name)
-          .map(token => this.$store.getters.getChain(token.chainId))
-          .filter(chain => chain)
+          .map((token) => this.$store.getters.getChain(token.chainId))
+          .filter((chain) => chain)
       );
     },
     fromChain() {
@@ -465,8 +465,8 @@ export default {
       return (
         this.tokenMaps &&
         this.tokenMaps
-          .map(tokenMap => this.$store.getters.getChain(tokenMap.toToken.chainId))
-          .filter(chain => chain)
+          .map((tokenMap) => this.$store.getters.getChain(tokenMap.toToken.chainId))
+          .filter((chain) => chain)
       );
     },
     toChain() {
@@ -646,19 +646,19 @@ export default {
       let tokenAddress = '';
       const isMainnet = false;
       if (chain === 'bsc') {
-        if (isMainnet) tokenAddress = '0x0B53b5dA7d0F275C31a6A182622bDF02474aF253';
+        if (isMainnet) tokenAddress = '0xe5c85b60ff243cfdb067be4078e477ac04b594e9';
         else tokenAddress = '0xf3fd0f360ace3b0e83843221a763fec857291060';
       }
       if (chain === 'eth') {
-        if (isMainnet) tokenAddress = '0x35609dC59E15d03c5c865507e1348FA5abB319A8';
+        if (isMainnet) tokenAddress = '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1';
         else tokenAddress = '0x26D583e2CDa958b13CC319FAd124aa729f8A196e';
       }
       if (chain === 'polygon') {
-        if (isMainnet) tokenAddress = '0x6a335AC6A3cdf444967Fe03E7b6B273c86043990';
+        if (isMainnet) tokenAddress = '0xffcd553464a00d7b30a48960611e5032f544700a';
         else tokenAddress = '0x957404188EA8804eFF6dc052e6B35c58aE351357';
       }
       if (chain === 'avalanche') {
-        if (isMainnet) tokenAddress = '0x0B53b5dA7d0F275C31a6A182622bDF02474aF253';
+        if (isMainnet) tokenAddress = '0x99aeecf3717ec6b369d847e3d62d14e14251e4d4';
         else tokenAddress = '0x7D35e9D90bD91BA82dAe43d7e03cF1e04c14aea8';
       }
       const win = window;
@@ -713,7 +713,7 @@ export default {
       });
       const { fromChainId } = this;
       this.fromChainId = this.toChainId;
-      if (this.toChains && this.toChains.find(chain => chain.id === fromChainId)) {
+      if (this.toChains && this.toChains.find((chain) => chain.id === fromChainId)) {
         this.toChainId = fromChainId;
       } else {
         this.toChainId = null;
