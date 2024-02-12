@@ -14,7 +14,7 @@
     "node": "^18"
   },
   "dependencies": {
-    "@cityofzion/neon-js": "^4.8.1",
+    "@cityofzion/neon-js": "^5.5.1",
     "@ethersproject/bytes": "^5.0.6",
     "@iconify/vue2": "^1.2.1",
     "@ont-dev/ontology-dapi": "^0.5.7",
