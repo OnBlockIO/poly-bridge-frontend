@@ -291,6 +291,7 @@
         <CLink class="link" @click="addToMetamask('eth')">GM Ethereum</CLink>
         <CLink class="link" @click="addToMetamask('polygon')">GM Polygon</CLink>
         <CLink class="link" @click="addToMetamask('avalanche')">GM Avalanche</CLink>
+        <CLink class="link" @click="addToMetamask('base')">GM Base</CLink>
       </div>
     </div>
 
@@ -646,7 +647,7 @@ export default {
       let tokenAddress = '';
       const isMainnet = false;
       if (chain === 'bsc') {
-        if (isMainnet) tokenAddress = '0xe5c85b60ff243cfdb067be4078e477ac04b594e9';
+        if (isMainnet) tokenAddress = '0xbba0f2f541809a85c18dd0106080076a0ba21b2b';
         else tokenAddress = '0xf3fd0f360ace3b0e83843221a763fec857291060';
       }
       if (chain === 'eth') {
@@ -660,6 +661,10 @@ export default {
       if (chain === 'avalanche') {
         if (isMainnet) tokenAddress = '0x99aeecf3717ec6b369d847e3d62d14e14251e4d4';
         else tokenAddress = '0x7D35e9D90bD91BA82dAe43d7e03cF1e04c14aea8';
+      }
+      if (chain === 'base') {
+        if (isMainnet) tokenAddress = '0x55F02AcD0ba21AFaC507c8C79cF5Bc25A92A6754';
+        else tokenAddress = '0x9b7E1a760751De8251e9F1ad09eD9039D4B7A676';
       }
       const win = window;
       const tokenSymbol = 'GM';

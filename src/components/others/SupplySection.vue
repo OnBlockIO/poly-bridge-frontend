@@ -127,6 +127,15 @@ export default {
         },
         {
           id: 6,
+          slug: 'base',
+          imgsrc: 'base.svg',
+          title: 'Base ERC20',
+          availableAmount: '',
+          availableNumber: 0,
+          percentage: '',
+        },
+        {
+          id: 7,
           slug: 'phantasma',
           imgsrc: 'phantasma.svg',
           title: 'Phantasma PEPE11',

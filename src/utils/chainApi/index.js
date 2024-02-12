@@ -11,6 +11,7 @@ const APIS = {
   [ChainId.Ok]: () => import('./eth'),
   [ChainId.Palette]: () => import('./eth'),
   [ChainId.Polygon]: () => import('./eth'),
+  [ChainId.Base]: () => import('./eth'),
   [ChainId.Arbitrum]: () => import('./eth'),
   [ChainId.xDai]: () => import('./eth'),
   [ChainId.HSC]: () => import('./eth'),
