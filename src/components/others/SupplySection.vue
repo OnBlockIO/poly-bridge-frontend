@@ -165,7 +165,7 @@ export default {
           const tc = res[`${token.slug}CirculatingSupply`];
           token.availableAmount = number(tc, 0);
           token.availableNumber = tc;
-          token.percentage = `${((100 * tc) / circulating).toFixed(2)}%`;
+          token.percentage = tc ? `${((100 * tc) / circulating).toFixed(2)}%` : `0%`;
         } catch (err) {
           console.error(err);
         }
