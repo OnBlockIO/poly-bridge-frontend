@@ -167,6 +167,7 @@ export default {
       // [ChainId.Ont]: 'Ontology',
       // [ChainId.Ok]: 'OKExChain',
       [ChainId.Polygon]: 'Polygon',
+      [ChainId.Base]: 'Base',
       // [ChainId.Palette]: 'Palette',
       // [ChainId.BcsPalette]: 'Bcs Palette',
       // [ChainId.Arbitrum]: 'Arbitrum',
@@ -191,6 +192,7 @@ export default {
     chainNetworkName: {
       [ChainId.Poly]: TARGET_MAINNET ? 'MainNet' : 'TestNet',
       [ChainId.Polygon]: TARGET_MAINNET ? 'MainNet' : 'TestNet',
+      [ChainId.Base]: TARGET_MAINNET ? 'MainNet' : 'TestNet',
       // [ChainId.Arbitrum]: TARGET_MAINNET ? 'MainNet' : 'TestNet',
       // [ChainId.OntEvm]: TARGET_MAINNET ? 'MainNet' : 'TestNet',
       // [ChainId.Optimistic]: TARGET_MAINNET ? 'MainNet' : 'TestNet',

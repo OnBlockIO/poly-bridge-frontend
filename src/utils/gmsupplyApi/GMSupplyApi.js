@@ -18,6 +18,8 @@ export interface IGetGMSupplyResult {
     phantasmaTotalSupply: number
     polygonCirculatingSupply: number
     polygonTotalSupply: number
+    baseCirculatingSupply: number
+    baseTotalSupply: number
     allCirculatingSupply: number
     allTotalSupply: number
 } */
