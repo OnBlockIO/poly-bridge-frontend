@@ -31,6 +31,8 @@ module.exports = {
       os: require.resolve('os-browserify/browser'),
       http: require.resolve('stream-http'),
       https: require.resolve('https-browserify'),
+      assert: require.resolve('assert'),
+      url: require.resolve('url'),
     };
 
     const bufferPlugin = new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] });
