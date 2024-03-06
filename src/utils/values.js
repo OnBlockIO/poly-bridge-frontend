@@ -922,3 +922,85 @@ export const DEFAULT_TOKEN_BASIC_NAME = 'GM';
 export const DEFAULT_CHAIN_NAME = 'BSC';
 
 export const TOP_TOKEN_BASIC_NAMES = ['NEO', 'BNEO', 'ETH', 'USDT', 'USDC', 'DAI'];
+
+export const GM_TOKENS = (
+  TARGET_MAINNET
+    ? [
+        {
+          hash: '0xbba0f2f541809a85c18dd0106080076a0ba21b2b',
+          chainId: 6, // BSC
+        },
+        {
+          hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
+          chainId: 2, // ETH
+        },
+        {
+          hash: '0xffcd553464a00d7b30a48960611e5032f544700a',
+          chainId: 17, // Polygon
+        },
+        {
+          hash: '0x99aeecf3717ec6b369d847e3d62d14e14251e4d4',
+          chainId: 21, // Avalanche
+        },
+        {
+          hash: '0x9b049f1283515eef1d3f6ac610e1595ed25ca3e9',
+          chainId: 14, // N3
+        },
+      ]
+    : [
+        {
+          hash: 'f3fd0f360ace3b0e83843221a763fec857291060',
+          chainId: 79,
+        },
+        {
+          hash: '957404188ea8804eff6dc052e6b35c58ae351357',
+          chainId: 202,
+        },
+        {
+          hash: '7d35e9d90bd91ba82dae43d7e03cf1e04c14aea8',
+          chainId: 209,
+        },
+        {
+          hash: 'c13b05fc0e6fe3cc681e29a574557784b4f79aff',
+          chainId: 888,
+        },
+      ]
+).map((item) => {
+  return { ...item, name: 'GM', tokenBasicName: 'GM', decimals: 8 };
+});
+
+export const GM_TOKEN_BASICS = [
+  {
+    name: 'GM',
+    decimals: 8,
+    meta: 'https://bridge.poly.network/testnet/img/neo.e6800a4e.svg',
+    tokens: GM_TOKENS,
+  },
+];
+
+export const gmGetTokenMaps = (chainId) => {
+  const res = [];
+  const fromToken = {
+    hash: GM_TOKENS.find((item) => item.chainId === chainId).hash,
+    chainId,
+    name: 'GM',
+    tokenBasicName: 'GM',
+    tokenBasic: null,
+  };
+  for (let i = 0; i < GM_TOKENS.length; i += 1) {
+    const token = GM_TOKENS[i];
+    if (token.chainId !== chainId) {
+      res.push({
+        fromToken,
+        toToken: {
+          hash: token.hash,
+          chainId: token.chainId,
+          name: 'GM',
+          tokenBasicName: 'GM',
+          tokenBasic: null,
+        },
+      });
+    }
+  }
+  return res;
+};

@@ -2,7 +2,13 @@ import axios from 'axios';
 import _ from 'lodash';
 import { HttpError } from './errors';
 import { mapTransactionToDo } from './mappers';
-import { HTTP_BASE_URL, HTTP_NFT_BASE_URL } from './values';
+import {
+  HTTP_BASE_URL,
+  HTTP_NFT_BASE_URL,
+  GM_TOKENS,
+  GM_TOKEN_BASICS,
+  gmGetTokenMaps,
+} from './values';
 import * as schemas from './schemas';
 import { deserialize, list } from './serializr';
 
@@ -43,22 +49,10 @@ request.interceptors.response.use(
 
 export default {
   async getTokenBasics() {
-    const result = await request({ method: 'post', url: '/tokenbasics', data: {} });
-    const tokenBasics = deserialize(list(schemas.tokenBasic), result.TokenBasics || []);
-    const tokens = _.flatMap(tokenBasics, (tokenBasic) => tokenBasic.tokens || []);
-    return { tokenBasics, tokens };
+    return { tokenBasics: GM_TOKEN_BASICS, tokens: GM_TOKENS };
   },
   async getTokenMaps({ fromChainId, fromTokenHash }) {
-    const result = await request({
-      method: 'post',
-      url: '/tokenmap',
-      data: {
-        ChainId: fromChainId,
-        Hash: fromTokenHash,
-      },
-    });
-    const tokenMaps = deserialize(list(schemas.tokenMap), result.TokenMaps);
-    return tokenMaps;
+    return gmGetTokenMaps(fromChainId, fromTokenHash);
   },
   async getFee({ fromChainId, fromTokenHash, toTokenHash, toChainId }) {
     const result = await request({
