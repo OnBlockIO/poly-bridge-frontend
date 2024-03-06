@@ -1,5 +1,7 @@
 import axios from 'axios';
 import _ from 'lodash';
+import { GMSupplyApi } from '@/utils/gmsupplyApi';
+import { TARGET_MAINNET } from './env';
 import { HttpError } from './errors';
 import { mapTransactionToDo } from './mappers';
 import {
@@ -55,6 +57,11 @@ export default {
     return gmGetTokenMaps(fromChainId, fromTokenHash);
   },
   async getFee({ fromChainId, fromTokenHash, toTokenHash, toChainId }) {
+    const baseUrl = TARGET_MAINNET
+      ? 'https://api.ghostmarket.io/api/v2'
+      : 'https://api-testnet.ghostmarket.io/api/v2';
+    const supplies = await new GMSupplyApi({ baseUrl }).getGMSupply();
+
     const result = await request({
       method: 'post',
       url: '/getfee',
@@ -65,6 +72,14 @@ export default {
         DstChainId: toChainId,
       },
     });
+    let balance = result.Balance;
+    if (fromChainId === 2) balance = supplies.ethereumCirculatingSupply;
+    if (fromChainId === 6) balance = supplies.bscCirculatingSupply;
+    if (fromChainId === 17) balance = supplies.polygonCirculatingSupply;
+    if (fromChainId === 21) balance = supplies.avalancheCirculatingSupply;
+    if (fromChainId === 14) balance = supplies.n3CirculatingSupply;
+    result.Balance = `${balance}`;
+    result.BalanceWithPrecision = (balance * 10 ** 8).toFixed(0);
     return result;
   },
   async getManualTxData({ polyHash }) {
