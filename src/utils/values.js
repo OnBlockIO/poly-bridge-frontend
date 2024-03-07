@@ -303,7 +303,7 @@ export const CHAINS = [
     symbol: TARGET_MAINNET ? 'BNB' : 'BNB',
     name: TARGET_MAINNET ? 'BNB Mainnet' : 'BNB Testnet',
     rpcUrl: TARGET_MAINNET
-      ? 'https://bsc-dataseed4.ninicoin.io/'
+      ? 'https://bsc-dataseed1.ninicoin.io/'
       : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
     chainExplorerUrl: TARGET_MAINNET ? 'https://bscscan.com' : 'https://testnet.bscscan.com',
     selfPay: true,
@@ -384,9 +384,7 @@ export const CHAINS = [
     nftFeeName: 'MATIC',
     symbol: TARGET_MAINNET ? 'MATIC' : 'MATIC',
     name: TARGET_MAINNET ? 'Polygon Mainnet' : 'Polygon Testnet',
-    rpcUrl: TARGET_MAINNET
-      ? 'https://rpc-mainnet.maticvigil.com/'
-      : 'https://rpc-mumbai.maticvigil.com/',
+    rpcUrl: TARGET_MAINNET ? 'https://polygon-rpc.com' : 'https://rpc-mumbai.maticvigil.com/',
     chainExplorerUrl: TARGET_MAINNET
       ? 'https://polygonscan.com/'
       : 'https://mumbai.polygonscan.com',
