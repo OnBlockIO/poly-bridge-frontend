@@ -164,7 +164,7 @@ export const CHAINS = [
     lockContractHash: TARGET_MAINNET
       ? '0x81910675DbaF69deE0fD77570BFD07f8E436386A'
       : //   : '0xe498fb7D00468a67A79dE5D4Ca264d3350165280',
-      '0xc58eF4F49BBbd6bdfFeEA8159481C1AFAfBCFD0e',
+        '0xc58eF4F49BBbd6bdfFeEA8159481C1AFAfBCFD0e',
     nftLockContractHash: TARGET_MAINNET
       ? '0xe5204d62361A353C665668C858Ea213070CA159c'
       : '0x940300dc3Fc26e3A330a300be766184C0b5Fe019',
@@ -173,7 +173,7 @@ export const CHAINS = [
       : '0xbaBaAF5CF7f63437755aAAFE7a4106463c5cD540',
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     dst_ccm: TARGET_MAINNET
-      ? '0x14413419452Aaf089762A0c5e95eD2A13bBC488C'
+      ? '0x5a51e2ebf8d136926b9ca7b59b60464e7c44d2eb'
       : '0xf989E80AAd477cB6059f366C0170a498909C4a55',
     nftFeeName: 'ETH',
     symbol: 'ETH',
@@ -291,19 +291,19 @@ export const CHAINS = [
     lockContractHash: TARGET_MAINNET
       ? '0xbc3B4E7517c06019F30Bf2f707eD2770b85f9928'
       : //  : '0xCed7997C3e807Fcdc5ac18fFC0B8af93a15a9eE5',
-      '0xfb717F8d478156fE7428369075bB2FaB4Ea659B5',
+        '0xfb717F8d478156fE7428369075bB2FaB4Ea659B5',
     nftLockContractHash: TARGET_MAINNET
       ? '0xe2bD9dD8FAF5C4C2087Ab82eC7E63F619CcAa152'
       : '0x61E289D43C1FEA7598786557A2F309979ad144D3',
     dst_ccm: TARGET_MAINNET
-      ? '0x1c9Ca8aBb5da65d94DaD2E8Fb3f45535480d5909'
+      ? '0xABD7f7B89c5fD5D0AEf06165f8173b1b83d7D5c9'
       : '0x906bC93FF690d6D3D2C4E7A7dfA4dEbdEF2cD7CA',
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     nftFeeName: 'BNB',
     symbol: TARGET_MAINNET ? 'BNB' : 'BNB',
     name: TARGET_MAINNET ? 'BNB Mainnet' : 'BNB Testnet',
     rpcUrl: TARGET_MAINNET
-      ? 'https://bsc-dataseed4.ninicoin.io/'
+      ? 'https://bsc-dataseed1.ninicoin.io/'
       : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
     chainExplorerUrl: TARGET_MAINNET ? 'https://bscscan.com' : 'https://testnet.bscscan.com',
     selfPay: true,
@@ -321,7 +321,7 @@ export const CHAINS = [
     lockContractHash: TARGET_MAINNET
       ? '0x1B0C55be400e2a7D924032B257Fbc75Bbfd256E7'
       : //  : '0x3c92F1E31aACA43Eb4fF8aE498C7E85618680F45',
-      '0xCC8407Ee04AaC2AdC0E6A55E7E97176C701146cd',
+        '0xCC8407Ee04AaC2AdC0E6A55E7E97176C701146cd',
     nftLockContractHash: TARGET_MAINNET
       ? '0xe2bD9dD8FAF5C4C2087Ab82eC7E63F619CcAa152'
       : '0xbaBaAF5CF7f63437755aAAFE7a4106463c5cD540',
@@ -378,15 +378,13 @@ export const CHAINS = [
       ? '0x6cEB2EC1E82880812F6aA60DfA260679D6C8323d'
       : '0xeA5B2a0cF4cA9bd5c72Ea1fbEE1FFe420e57f692',
     dst_ccm: TARGET_MAINNET
-      ? '0xB16FED79a6Cb9270956f045F2E7989AFfb75d459'
+      ? '0x5366ea2b5b729ff3cef404c2408c8c60cc061b71'
       : '0xDC1045aD8956e14eC51B7824AB26b1360567ab51',
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     nftFeeName: 'MATIC',
     symbol: TARGET_MAINNET ? 'MATIC' : 'MATIC',
     name: TARGET_MAINNET ? 'Polygon Mainnet' : 'Polygon Testnet',
-    rpcUrl: TARGET_MAINNET
-      ? 'https://rpc-mainnet.maticvigil.com/'
-      : 'https://rpc-mumbai.maticvigil.com/',
+    rpcUrl: TARGET_MAINNET ? 'https://polygon-rpc.com' : 'https://rpc-mumbai.maticvigil.com/',
     chainExplorerUrl: TARGET_MAINNET
       ? 'https://polygonscan.com/'
       : 'https://mumbai.polygonscan.com',
@@ -402,25 +400,15 @@ export const CHAINS = [
     nftexplorerUrl: TARGET_MAINNET
       ? 'https://basescan.com/tx/0x{txHash}'
       : 'https://sepolia.basescan.org/tx/0x{txHash}',
-    lockContractHash: TARGET_MAINNET
-      ? ''
-      : '',
-    nftLockContractHash: TARGET_MAINNET
-      ? ''
-      : '',
-    dst_ccm: TARGET_MAINNET
-      ? ''
-      : '',
+    lockContractHash: TARGET_MAINNET ? '' : '',
+    nftLockContractHash: TARGET_MAINNET ? '' : '',
+    dst_ccm: TARGET_MAINNET ? '' : '',
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     nftFeeName: 'ETH',
     symbol: TARGET_MAINNET ? 'ETH' : 'ETH',
     name: TARGET_MAINNET ? 'Base Mainnet' : 'Base Testnet',
-    rpcUrl: TARGET_MAINNET
-      ? 'https://mainnet.base.org'
-      : 'https://sepolia.base.org',
-    chainExplorerUrl: TARGET_MAINNET
-      ? 'https://basescan.org/'
-      : 'https://sepolia.basescan.org',
+    rpcUrl: TARGET_MAINNET ? 'https://mainnet.base.org' : 'https://sepolia.base.org',
+    chainExplorerUrl: TARGET_MAINNET ? 'https://basescan.org/' : 'https://sepolia.basescan.org',
     selfPay: true,
   },
   {
@@ -480,7 +468,7 @@ export const CHAINS = [
       ? 'f06587dE89e289Ce480CDf21109A14547eb33A0d'
       : 'ac0a6759696569B3729177ba6844D41FF6D57844',
     dst_ccm: TARGET_MAINNET
-      ? '0x2aA63cd0b28FB4C31fA8e4E95Ec11815Be07b9Ac'
+      ? '0xE3D0FB6E3cB5DA61EB18b06D035052441009d1E6'
       : '0xf37D8C2d072b74d6532541B70319ef08f9F6a4a8',
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     nftFeeName: 'AVAX',
@@ -556,7 +544,7 @@ export const CHAINS = [
     lockContractHash: TARGET_MAINNET
       ? '0xbd4a08577476A521C41a21EF3f00b045b74175d5'
       : //  : '0x5598226aD2E8991deEFD03203739C87BdF6e6D03',
-      '0xbAa40bBd7888f79614057d82bdcE88dF2D23bf55',
+        '0xbAa40bBd7888f79614057d82bdcE88dF2D23bf55',
     dst_ccm: TARGET_MAINNET
       ? '0x6CE66Cf89A17B5C22e757cca01beAD901fC8C7f2'
       : '0x60Ab3e4a841c8a2E4148aAfc74C0E63c4B54d109',
@@ -932,3 +920,85 @@ export const DEFAULT_TOKEN_BASIC_NAME = 'GM';
 export const DEFAULT_CHAIN_NAME = 'BSC';
 
 export const TOP_TOKEN_BASIC_NAMES = ['NEO', 'BNEO', 'ETH', 'USDT', 'USDC', 'DAI'];
+
+export const GM_TOKENS = (
+  TARGET_MAINNET
+    ? [
+        {
+          hash: '0xbba0f2f541809a85c18dd0106080076a0ba21b2b',
+          chainId: 6, // BSC
+        },
+        {
+          hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
+          chainId: 2, // ETH
+        },
+        {
+          hash: '0xffcd553464a00d7b30a48960611e5032f544700a',
+          chainId: 17, // Polygon
+        },
+        {
+          hash: '0x99aeecf3717ec6b369d847e3d62d14e14251e4d4',
+          chainId: 21, // Avalanche
+        },
+        {
+          hash: '0x9b049f1283515eef1d3f6ac610e1595ed25ca3e9',
+          chainId: 14, // N3
+        },
+      ]
+    : [
+        {
+          hash: 'f3fd0f360ace3b0e83843221a763fec857291060',
+          chainId: 79,
+        },
+        {
+          hash: '957404188ea8804eff6dc052e6b35c58ae351357',
+          chainId: 202,
+        },
+        {
+          hash: '7d35e9d90bd91ba82dae43d7e03cf1e04c14aea8',
+          chainId: 209,
+        },
+        {
+          hash: 'c13b05fc0e6fe3cc681e29a574557784b4f79aff',
+          chainId: 888,
+        },
+      ]
+).map((item) => {
+  return { ...item, name: 'GM', tokenBasicName: 'GM', decimals: 8 };
+});
+
+export const GM_TOKEN_BASICS = [
+  {
+    name: 'GM',
+    decimals: 8,
+    meta: 'https://bridge.poly.network/testnet/img/neo.e6800a4e.svg',
+    tokens: GM_TOKENS,
+  },
+];
+
+export const gmGetTokenMaps = (chainId) => {
+  const res = [];
+  const fromToken = {
+    hash: GM_TOKENS.find((item) => item.chainId === chainId).hash,
+    chainId,
+    name: 'GM',
+    tokenBasicName: 'GM',
+    tokenBasic: null,
+  };
+  for (let i = 0; i < GM_TOKENS.length; i += 1) {
+    const token = GM_TOKENS[i];
+    if (token.chainId !== chainId) {
+      res.push({
+        fromToken,
+        toToken: {
+          hash: token.hash,
+          chainId: token.chainId,
+          name: 'GM',
+          tokenBasicName: 'GM',
+          tokenBasic: null,
+        },
+      });
+    }
+  }
+  return res;
+};
