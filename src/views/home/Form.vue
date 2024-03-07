@@ -765,12 +765,12 @@ export default {
     async approve() {
       await this.$store.dispatch('ensureChainWalletReady', this.fromChainId);
       // const InfinityAmount = 9999999999999
-      /* const flag = await this.getWrapperCheck();
+      const flag = await this.getWrapperCheck();
       if (!flag) {
         this.$message.error('wrapper contract error');
         this.packing = false;
         return;
-      } */
+      }
       try {
         this.approving = true;
         const walletApi = await getWalletApi(this.fromWallet.name);
