@@ -173,7 +173,7 @@ export const CHAINS = [
       : '0xbaBaAF5CF7f63437755aAAFE7a4106463c5cD540',
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     dst_ccm: TARGET_MAINNET
-      ? '0x14413419452Aaf089762A0c5e95eD2A13bBC488C'
+      ? '0x5a51e2ebf8d136926b9ca7b59b60464e7c44d2eb'
       : '0xf989E80AAd477cB6059f366C0170a498909C4a55',
     nftFeeName: 'ETH',
     symbol: 'ETH',
@@ -289,7 +289,7 @@ export const CHAINS = [
       ? 'https://bscscan.com/tx/0x{txHash}'
       : 'https://testnet.bscscan.com/tx/0x{txHash}',
     lockContractHash: TARGET_MAINNET
-      ? '0x48B039ec0bb13dcaFC01391ED9F606244cC10F14'
+      ? '0xbc3B4E7517c06019F30Bf2f707eD2770b85f9928'
       : //  : '0xCed7997C3e807Fcdc5ac18fFC0B8af93a15a9eE5',
         '0xfb717F8d478156fE7428369075bB2FaB4Ea659B5',
     nftLockContractHash: TARGET_MAINNET
@@ -372,7 +372,7 @@ export const CHAINS = [
       ? 'https://polygonscan.com/tx/0x{txHash}'
       : 'https://mumbai.polygonscan.com/tx/0x{txHash}',
     lockContractHash: TARGET_MAINNET
-      ? '0x3517d523cf3320EC75C0D205A56DF316aFB5F317'
+      ? '0xB88f13682F3C602aCD84B4b2eEB96A9DD75Afd89'
       : '0xD5d63Dce45E0275Ca76a8b2e9BD8C11679A57D0D',
     nftLockContractHash: TARGET_MAINNET
       ? '0x6cEB2EC1E82880812F6aA60DfA260679D6C8323d'
@@ -467,7 +467,7 @@ export const CHAINS = [
       ? 'https://avascan.info/blockchain/c/tx/0x{txHash}'
       : 'https://testnet.avascan.info/blockchain/c/tx/0x{txHash}',
     lockContractHash: TARGET_MAINNET
-      ? '0x217399A4562a935E2259656f44b24EA8665F6f33'
+      ? 'f06587dE89e289Ce480CDf21109A14547eb33A0d'
       : 'ac0a6759696569B3729177ba6844D41FF6D57844',
     dst_ccm: TARGET_MAINNET
       ? '0xE3D0FB6E3cB5DA61EB18b06D035052441009d1E6'
