@@ -159,7 +159,10 @@ export default {
     new GMSupplyApi({ baseUrl }).getGMSupply().then((res) => {
       const circulating = res.allCirculatingSupply === 0 ? 1 : res.allCirculatingSupply;
       this.totalSupplyCount = number(res.allTotalSupply, 0);
-      this.availableSupplyCount = number(res.allCirculatingSupply, 0);
+      this.availableSupplyCount =
+        res.allCirculatingSupply > 100000000
+          ? number(100000000, 0)
+          : number(res.allCirculatingSupply, 0);
       this.supplyTokens.forEach((token) => {
         try {
           const tc = res[`${token.slug}CirculatingSupply`];
