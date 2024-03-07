@@ -166,7 +166,7 @@ export const CHAINS = [
       : //   : '0xe498fb7D00468a67A79dE5D4Ca264d3350165280',
         '0xc58eF4F49BBbd6bdfFeEA8159481C1AFAfBCFD0e',
     nftLockContractHash: TARGET_MAINNET
-      ? '0xe5204d62361A353C665668C858Ea213070CA159c'
+      ? '0x81910675DbaF69deE0fD77570BFD07f8E436386A'
       : '0x940300dc3Fc26e3A330a300be766184C0b5Fe019',
     pltNftLockContractHash: TARGET_MAINNET
       ? '0xD728e9844af285fA116806c273aa413686aE65e8'
@@ -372,7 +372,7 @@ export const CHAINS = [
       ? 'https://polygonscan.com/tx/0x{txHash}'
       : 'https://mumbai.polygonscan.com/tx/0x{txHash}',
     lockContractHash: TARGET_MAINNET
-      ? '0xB88f13682F3C602aCD84B4b2eEB96A9DD75Afd89'
+      ? '0x57b3F21f6aE54FCEEE652b4876a38DB414520b5b'
       : '0xD5d63Dce45E0275Ca76a8b2e9BD8C11679A57D0D',
     nftLockContractHash: TARGET_MAINNET
       ? '0x6cEB2EC1E82880812F6aA60DfA260679D6C8323d'
@@ -465,7 +465,7 @@ export const CHAINS = [
       ? 'https://avascan.info/blockchain/c/tx/0x{txHash}'
       : 'https://testnet.avascan.info/blockchain/c/tx/0x{txHash}',
     lockContractHash: TARGET_MAINNET
-      ? 'f06587dE89e289Ce480CDf21109A14547eb33A0d'
+      ? '0xC9ea7913E978b178E4a9Bb9Aa38eef522b61803c'
       : 'ac0a6759696569B3729177ba6844D41FF6D57844',
     dst_ccm: TARGET_MAINNET
       ? '0xE3D0FB6E3cB5DA61EB18b06D035052441009d1E6'
