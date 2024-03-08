@@ -971,7 +971,7 @@ export const GM_TOKEN_BASICS = [
   {
     name: 'GM',
     decimals: 8,
-    meta: 'https://bridge.poly.network/testnet/img/neo.e6800a4e.svg',
+    meta: 'https://governance.ghostmarket.io/images/gm.png',
     tokens: GM_TOKENS,
   },
 ];
