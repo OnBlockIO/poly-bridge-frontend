@@ -928,10 +928,10 @@ export const GM_TOKENS = (
           hash: '0xbba0f2f541809a85c18dd0106080076a0ba21b2b',
           chainId: 6, // BSC
         },
-        {
-          hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
-          chainId: 2, // ETH
-        },
+        /* {
+        hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
+        chainId: 2, // ETH
+      }, */
         {
           hash: '0xffcd553464a00d7b30a48960611e5032f544700a',
           chainId: 17, // Polygon
