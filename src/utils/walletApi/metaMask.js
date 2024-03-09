@@ -231,6 +231,10 @@ async function approve({ chainId, address, tokenHash, spender, amount }) {
     const tokenContract = new web3.eth.Contract(require('@/assets/json/eth-erc20.json'), tokenHash);
     return await tokenContract.methods.approve(`0x${spender}`, amountInt).send({
       from: address,
+      value: undefined,
+      type: '',
+      maxPriorityFeePerGas: null,
+      maxFeePerGas: null,
     });
   } catch (error) {
     throw convertWalletError(error);
