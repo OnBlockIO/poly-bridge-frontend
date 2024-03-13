@@ -336,6 +336,9 @@ async function lock({
           gas: fromChainId === 24 ? 2000000 : null,
           value:
             fromTokenHash === '0000000000000000000000000000000000000000' ? amountInt : nativefeeInt,
+          type: '',
+          maxPriorityFeePerGas: null,
+          maxFeePerGas: null,
         }),
     );
     return toStandardHex(result);
