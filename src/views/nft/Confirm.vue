@@ -184,7 +184,11 @@ export default {
       }
       const standardSpender = toStandardHex($nftspender);
       const index = arr.indexOf(standardSpender);
-      if (index > -1) {
+      if (
+        index > -1 ||
+        // temp bypass wrapper check since poly api does not return our wrapper
+        this.fromChain.lockContractHash === 'e83beaed1c6f7f56e03c97d96401c3125214c6f8'
+      ) {
         flag = true;
       }
       return flag;
