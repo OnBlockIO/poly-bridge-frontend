@@ -1,3 +1,4 @@
+import axios from 'axios';
 import delay from 'delay';
 import _ from 'lodash';
 import store from '@/store';
@@ -138,33 +139,75 @@ async function getAllowance() {
 }
 
 async function getTransactionStatus({ transactionHash }) {
-  try {
-    let applicationLog = null;
-    try {
-      applicationLog = await n3Dapi.getApplicationLog({ txid: transactionHash });
-      // fix network error
-      if (!applicationLog) {
-        throw new WalletError('Communicate failed with wallet.', {
-          code: WalletError.CODES.COMMUNICATE_FAILED,
-        });
+  const BASE_URL_API_LIST = [
+    'https://n3seed1.ngd.network:10332',
+    'https://n3seed2.ngd.network:10332',
+    // 'https://mainnet1.neo.coz.io:443',
+    // 'https://mainnet2.neo.coz.io:443',
+    // 'https://neo1-nodes.ghostmarket.io:443'
+  ];
+  const url = BASE_URL_API_LIST[Math.floor(Math.random() * BASE_URL_API_LIST.length)];
+  console.log('post url: ', url);
+
+  const request = {
+    params: [transactionHash],
+    jsonrpc: '2.0',
+    id: 1234,
+    method: 'getapplicationlog',
+  };
+
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+
+  return axios
+    .post(url, JSON.stringify(request), headers)
+    .then((response) => {
+      const res = response.data;
+      const applicationLog = res.result;
+      if (applicationLog) {
+        const vmstate = _.get(applicationLog, 'executions[0].vmstate');
+        const result = _.get(applicationLog, 'executions[0].stack[0].value');
+        console.log('result: ', result, 'vmstate: ', vmstate);
+        return vmstate === 'HALT' && result
+          ? SingleTransactionStatus.Done
+          : SingleTransactionStatus.Failed;
       }
-    } catch (error) {
-      // ignore rpc error
-      if (error.type !== 'RPC_ERROR') {
+      return SingleTransactionStatus.Pending;
+    })
+    .catch((error) => {
+      if (error) {
+        console.log('error in getTransaction: ', error);
         throw error;
       }
-    }
-    if (applicationLog) {
-      const vmstate = _.get(applicationLog, 'executions[0].vmstate');
-      const result = _.get(applicationLog, 'executions[0].stack[0].value');
-      return vmstate === 'HALT' && result
-        ? SingleTransactionStatus.Done
-        : SingleTransactionStatus.Failed;
-    }
-    return SingleTransactionStatus.Pending;
-  } catch (error) {
-    throw convertWalletError(error);
-  }
+    });
+  // try {
+  //   let applicationLog = null;
+  //   try {
+  //     applicationLog = await n3Dapi.getApplicationLog({ txid: transactionHash });
+  //     // fix network error
+  //     if (!applicationLog) {
+  //       throw new WalletError('Communicate failed with wallet.', {
+  //         code: WalletError.CODES.COMMUNICATE_FAILED,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     // ignore rpc error
+  //     if (error.type !== 'RPC_ERROR') {
+  //       throw error;
+  //     }
+  //   }
+  //   if (applicationLog) {
+  //     const vmstate = _.get(applicationLog, 'executions[0].vmstate');
+  //     const result = _.get(applicationLog, 'executions[0].stack[0].value');
+  //     return vmstate === 'HALT' && result
+  //       ? SingleTransactionStatus.Done
+  //       : SingleTransactionStatus.Failed;
+  //   }
+  //   return SingleTransactionStatus.Pending;
+  // } catch (error) {
+  //   throw convertWalletError(error);
+  // }
 }
 
 async function approve() {
