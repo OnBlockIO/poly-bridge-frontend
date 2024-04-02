@@ -141,13 +141,15 @@ async function getAllowance() {
 }
 
 async function getTransactionStatus({ transactionHash }) {
-  const BASE_URL_API_LIST = [
-    'https://n3seed1.ngd.network:10332',
-    'https://n3seed2.ngd.network:10332',
-    // 'https://mainnet1.neo.coz.io:443',
-    // 'https://mainnet2.neo.coz.io:443',
-    // 'https://neo1-nodes.ghostmarket.io:443'
-  ];
+  const BASE_URL_API_LIST = TARGET_MAINNET
+    ? [
+        'https://n3seed1.ngd.network:10332',
+        'https://n3seed2.ngd.network:10332',
+        // 'https://mainnet1.neo.coz.io:443',
+        // 'https://mainnet2.neo.coz.io:443',
+        // 'https://neo1-nodes.ghostmarket.io:443'
+      ]
+    : ['https://testnet1.neo.coz.io:443/', 'https://testnet2.neo.coz.io:443/'];
   const url = BASE_URL_API_LIST[Math.floor(Math.random() * BASE_URL_API_LIST.length)];
   console.log('post url: ', url);
 
