@@ -84,7 +84,7 @@ export default {
           id: 1,
           slug: 'bsc',
           imgsrc: 'bsc.svg',
-          title: 'BSC ERC20',
+          title: 'BNB Chain ERC20',
           availableAmount: '',
           availableNumber: 0,
           percentage: '',

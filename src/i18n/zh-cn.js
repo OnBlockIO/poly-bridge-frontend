@@ -154,7 +154,7 @@ export default {
       [ChainId.Poly]: 'Poly Network',
       [ChainId.Eth]: 'Ethereum',
       [ChainId.Neo]: 'Neo',
-      [ChainId.N3]: 'N3',
+      [ChainId.N3]: 'Neo N3',
       // [ChainId.xDai]: 'xDai',
       // [ChainId.HSC]: 'HSC',
       // [ChainId.Kcc]: 'Kcc',
