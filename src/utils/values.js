@@ -301,7 +301,7 @@ export const CHAINS = [
     nftFeeContractHash: '0000000000000000000000000000000000000000',
     nftFeeName: 'BNB',
     symbol: TARGET_MAINNET ? 'BNB' : 'BNB',
-    name: TARGET_MAINNET ? 'BNB Mainnet' : 'BNB Testnet',
+    name: TARGET_MAINNET ? 'BNB Chain Mainnet' : 'BNB Chain Testnet',
     rpcUrl: TARGET_MAINNET
       ? 'https://bsc-dataseed1.ninicoin.io/'
       : 'https://data-seed-prebsc-1-s1.binance.org:8545/',
@@ -929,9 +929,9 @@ export const GM_TOKENS = (
           chainId: 6, // BSC
         },
         /* {
-        hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
-        chainId: 2, // ETH
-      }, */
+      hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
+      chainId: 2, // ETH
+    }, */
         {
           hash: '0xffcd553464a00d7b30a48960611e5032f544700a',
           chainId: 17, // Polygon
