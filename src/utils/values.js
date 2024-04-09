@@ -462,8 +462,8 @@ export const CHAINS = [
     nativeFee: true,
     icon: require('@/assets/png/avax.png'),
     explorerUrl: TARGET_MAINNET
-      ? 'https://avascan.info/blockchain/c/tx/0x{txHash}'
-      : 'https://testnet.avascan.info/blockchain/c/tx/0x{txHash}',
+      ? 'https://snowtrace.io/tx/0x{txHash}'
+      : 'https://testnet.snowtrace.io/tx/0x{txHash}',
     lockContractHash: TARGET_MAINNET
       ? '0xC9ea7913E978b178E4a9Bb9Aa38eef522b61803c'
       : 'ac0a6759696569B3729177ba6844D41FF6D57844',
@@ -929,9 +929,9 @@ export const GM_TOKENS = (
           chainId: 6, // BSC
         },
         /* {
-      hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
-      chainId: 2, // ETH
-    }, */
+    hash: '0x203aad20f51bbe43e650d3ceea88d43dd6c817c1',
+    chainId: 2, // ETH
+  }, */
         {
           hash: '0xffcd553464a00d7b30a48960611e5032f544700a',
           chainId: 17, // Polygon
