@@ -166,9 +166,18 @@ export default {
       this.supplyTokens.forEach((token) => {
         try {
           const tc = res[`${token.slug}CirculatingSupply`];
-          token.availableAmount = number(tc, 0);
-          token.availableNumber = tc;
-          token.percentage = tc ? `${((100 * tc) / circulating).toFixed(2)}%` : `0%`;
+          // temp hardcode ethereum values - to remove
+          if (token.slug === 'ethereum') {
+            token.availableAmount = number(226086.72552652657, 0);
+            token.availableNumber = 226086.72552652657;
+            token.percentage = 226086.72552652657
+              ? `${((100 * 226086.72552652657) / circulating).toFixed(2)}%`
+              : `0%`;
+          } else {
+            token.availableAmount = number(tc, 0);
+            token.availableNumber = tc;
+            token.percentage = tc ? `${((100 * tc) / circulating).toFixed(2)}%` : `0%`;
+          }
         } catch (err) {
           console.error(err);
         }
