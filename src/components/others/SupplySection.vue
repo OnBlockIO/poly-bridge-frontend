@@ -136,6 +136,15 @@ export default {
         },
         {
           id: 7,
+          slug: 'neox',
+          imgsrc: 'neox.png',
+          title: 'Neo X ERC20',
+          availableAmount: '',
+          availableNumber: 0,
+          percentage: '',
+        },
+        {
+          id: 8,
           slug: 'phantasma',
           imgsrc: 'phantasma.svg',
           title: 'Phantasma PEPE11',
