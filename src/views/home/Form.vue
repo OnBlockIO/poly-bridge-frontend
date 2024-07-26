@@ -292,6 +292,7 @@
         <CLink class="link" @click="addToMetamask('polygon')">GM Polygon</CLink>
         <CLink class="link" @click="addToMetamask('avalanche')">GM Avalanche</CLink>
         <CLink class="link" @click="addToMetamask('base')">GM Base</CLink>
+        <CLink class="link" @click="addToMetamask('neox')">GM Neo X</CLink>
       </div>
     </div>
 
@@ -665,6 +666,10 @@ export default {
       if (chain === 'base') {
         if (isMainnet) tokenAddress = '0x55F02AcD0ba21AFaC507c8C79cF5Bc25A92A6754';
         else tokenAddress = '0x9b7E1a760751De8251e9F1ad09eD9039D4B7A676';
+      }
+      if (chain === 'neox') {
+        if (isMainnet) tokenAddress = '0x42bD1B1c84aD8Cf576D25FCd86A7EFbE2752Fe02';
+        else tokenAddress = '0xF41db445D7eaF45536985cE185ce131FA4b42E68';
       }
       const win = window;
       const tokenSymbol = 'GM';
